@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="deleted-item">This is Default text</p>
+    <input type="text" name="" id="input-field" placeholder="please write delete if you delete this content">
+    <button id="click-btn" disabled>Delete</button>
+    <script>
+        document.getElementById('input-field').addEventListener('blur', function(){
+            document.body.style.backgroundColor= "blue"
+        })
+        document.getElementById('input-field').addEventListener('keyup', function(event){
+            const eventValue = event.target.value;
+            const deletedMatch = document.getElementById('click-btn');
+            if(eventValue === 'delete'){
+                deletedMatch.removeAttribute('disabled')
+            }
+            else(
+                deletedMatch.setAttribute('disabled',true)
+            )
+        } )
+        document.getElementById('click-btn').addEventListener('click', function(){
+            const textDlete = document.getElementById('deleted-item');
+            textDlete.style.display = 'none';
+        })
+    </script>
+</body>
+</html>
