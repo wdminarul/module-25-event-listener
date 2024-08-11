@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comment</title>
+</head>
+<body>
+    <h1>This is the dami content</h1>
+    <div id="main">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo fugit assumenda suscipit. Explicabo, asperiores earum? Ducimus distinctio sed consectetur ipsam in quod similique adipisci eius libero facilis exercitationem deserunt neque commodi aliquid reprehenderit excepturi, eos velit eligendi voluptate repellendus ratione ad laboriosam rerum? Reiciendis neque impedit id? Sunt, delectus facilis.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo fugit assumenda suscipit. Explicabo, asperiores earum? Ducimus distinctio sed consectetur ipsam in quod similique adipisci eius libero facilis exercitationem deserunt neque commodi aliquid reprehenderit excepturi, eos velit eligendi voluptate repellendus ratione ad laboriosam rerum? Reiciendis neque impedit id? Sunt, delectus facilis.</p>
+    </div>
+    <textarea name="" id="comment-text" cols="30" rows="10"></textarea>
+    <button id="comment">Comment</button>
+
+    <script>
+        document.getElementById('comment').addEventListener('click', function(){
+            const mainDiv = document.getElementById('main');
+            const newPara = document.createElement('p');
+            
+            const commentBox = document.getElementById('comment-text');
+            newPara.innerText = commentBox.value;
+            mainDiv.appendChild(newPara);
+            commentBox.value = '';
+        })
+    </script>
+</body>
+</html>
