@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <h1>this is changeable heading</h1>
+    <button id="btn" onclick="yellow()">body color yelow</button>
+    <button id="btn-2" onclick="red()">body color red</button>
+    <button id="btn-3">Make Blue</button>
+    <button id="btn-4">Make Purple</button>
+    <button id="btn-5">Make Green</button>
+    <button id="btn-6">Make Pink</button>
+
+    <script>
+        // first option 
+        function yellow(){
+            document.body.style.backgroundColor = "yellow";
+        }
+        function red(){
+            document.body.style.backgroundColor = "red";
+        }
+        // second option 
+        const makeBlueBtn = document.getElementById('btn-3');
+        makeBlueBtn.onclick = blue;
+        function blue(){
+            document.body.style.backgroundColor = "blue";
+        }
+        // third option 
+        const makePurple = document.getElementById('btn-4')
+        makePurple.onclick = function purple(){
+            document.body.style.backgroundColor = 'purple'
+        }
+        //4 option 
+        const otherOptio = document.getElementById('btn-5');
+        otherOptio.addEventListener('click',makeGreen);
+        function makeGreen(){
+            document.body.style.backgroundColor = 'green';
+        }
+
+        // most using event listener 
+        document.getElementById('btn-6').addEventListener('click', function(){
+            document.body.style.backgroundColor = 'pink';
+        })
+        
+    </script>
+</body>
+</html>
